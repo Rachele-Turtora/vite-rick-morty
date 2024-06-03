@@ -1,7 +1,17 @@
 <script>
+import HeaderComponent from "./components/HeaderComponent.vue";
+import axios from 'axios';
 
+export default {
+    name: "AppRickAndMorty",
+    components: {
+        HeaderComponent
+    }
+}
 </script>
 
-<template></template>
+<template>
+    <HeaderComponent />
+</template>
 
 <style scoped></style>
