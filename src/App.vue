@@ -16,4 +16,4 @@ export default {
     <MainComponent />
 </template>
 
-<style scoped></style>
+

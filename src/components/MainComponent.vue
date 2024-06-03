@@ -1,5 +1,6 @@
 <script>
 import CardsComponent from "./CardsComponent.vue";
+import FoundCharactersComponent from "./FoundCharactersComponent.vue";
 
 import axios from 'axios';
 import { store } from "../store";
@@ -8,6 +9,7 @@ export default {
     name: "MainComponent",
     components: {
         CardsComponent,
+        FoundCharactersComponent
     },
     data() {
         return {
@@ -26,6 +28,7 @@ export default {
     <main>
         <div class="container">
             <CardsComponent />
+            <FoundCharactersComponent />
         </div>
     </main>
 </template>
