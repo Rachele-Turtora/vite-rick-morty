@@ -1,4 +1,5 @@
 <script>
+import SearchComponent from "./SearchComponent.vue";
 import CardsComponent from "./CardsComponent.vue";
 import FoundCharactersComponent from "./FoundCharactersComponent.vue";
 
@@ -9,7 +10,8 @@ export default {
     name: "MainComponent",
     components: {
         CardsComponent,
-        FoundCharactersComponent
+        FoundCharactersComponent,
+        SearchComponent
     },
     data() {
         return {
@@ -27,6 +29,7 @@ export default {
 <template>
     <main>
         <div class="container">
+            <SearchComponent />
             <CardsComponent />
             <FoundCharactersComponent />
         </div>
