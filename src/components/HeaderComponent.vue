@@ -5,7 +5,9 @@ export default {
 </script>
 
 <template>
-    <h1>Rick and Morty App</h1>
+    <header>
+        <h1>Rick and Morty App</h1>
+    </header>
 </template>
 
 <style scoped>
