@@ -15,7 +15,12 @@ export default {
 <template>
     <ul>
         <li class="card" v-for="result in store.results">
-            {{ result.name }}
+            <img :src="result.image" :alt="result.name">
+            <h3>{{ result.name }}</h3>
+            <div class="description">
+                <p>{{ result.status }}</p>
+                <p>{{ result.species }}</p>
+            </div>
         </li>
     </ul>
 </template>
@@ -27,9 +32,21 @@ ul {
 }
 
 .card {
-    background-color: red;
-    height: 100px;
-    width: calc(25% - 20px);
-    margin: 10px;
+    width: 25%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    padding: 10px 0;
+}
+
+.description {
+    margin: 15px 0;
 }
 </style>

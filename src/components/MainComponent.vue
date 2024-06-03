@@ -41,7 +41,5 @@ main {
 .container {
     max-width: 80%;
     margin: 0 auto;
-    height: 100%;
-    background-color: aquamarine;
 }
 </style>

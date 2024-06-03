@@ -12,6 +12,6 @@ export default {
 
 <style scoped>
 h1 {
-    padding-top: 20px;
+    padding: 40px;
 }
 </style>
