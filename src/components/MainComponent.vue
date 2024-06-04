@@ -2,6 +2,7 @@
 import SearchComponent from "./SearchComponent.vue";
 import CardsComponent from "./CardsComponent.vue";
 import FoundCharactersComponent from "./FoundCharactersComponent.vue";
+import PaginationComponent from "./PaginationComponent.vue";
 
 import axios from 'axios';
 import { store } from "../store";
@@ -11,7 +12,8 @@ export default {
     components: {
         CardsComponent,
         FoundCharactersComponent,
-        SearchComponent
+        SearchComponent,
+        PaginationComponent
     },
     data() {
         return {
@@ -24,6 +26,8 @@ export default {
             this.store.loading = true;
 
             const params = {};
+
+            params.page = this.store.currentPage;
 
             if (this.store.searchKeySelect) {
                 params.status = this.store.searchKeySelect;
@@ -56,6 +60,7 @@ export default {
                 <SearchComponent @search="searchCards" />
                 <CardsComponent />
                 <FoundCharactersComponent />
+                <PaginationComponent @search="searchCards" />
             </div>
         </div>
     </main>

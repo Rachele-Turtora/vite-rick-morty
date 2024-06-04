@@ -5,5 +5,6 @@ export const store = reactive({
     loading: true,
     searchKeySelect: "",
     searchKeyInput: "",
+    currentPage: 1,
     apiUrl: "https://rickandmortyapi.com/api/character"
 })
