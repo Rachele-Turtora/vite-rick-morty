@@ -13,26 +13,20 @@ export default {
 </script>
 
 <template>
-    <ul>
-        <li class="card" v-for="result in store.results">
+    <div class="row">
+        <div class="card col-12 col-md-4 col-lg-3 border-0" v-for="result in store.results" :key="result.name">
             <img :src="result.image" :alt="result.name">
             <h3>{{ result.name }}</h3>
             <div class="description">
                 <p>{{ result.status }}</p>
                 <p>{{ result.species }}</p>
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
 </template>
 
 <style scoped>
-ul {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .card {
-    width: 25%;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;

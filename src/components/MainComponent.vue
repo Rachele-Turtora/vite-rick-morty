@@ -19,8 +19,11 @@ export default {
         }
     },
     created() {
+        this.store.loading = true;
+
         axios.get(this.store.apiUrl).then(response => {
-            this.store.results = response.data.results
+            this.store.results = response.data.results;
+            this.store.loading = false;
         })
     }
 }
@@ -29,9 +32,14 @@ export default {
 <template>
     <main>
         <div class="container">
-            <SearchComponent />
-            <CardsComponent />
-            <FoundCharactersComponent />
+            <div v-if="this.store.loading">
+                <p>Caricamento in corso...</p>
+            </div>
+            <div v-else>
+                <SearchComponent />
+                <CardsComponent />
+                <FoundCharactersComponent />
+            </div>
         </div>
     </main>
 </template>
@@ -39,10 +47,5 @@ export default {
 <style scoped>
 main {
     padding-top: 30px;
-}
-
-.container {
-    max-width: 80%;
-    margin: 0 auto;
 }
 </style>
