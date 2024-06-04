@@ -27,14 +27,16 @@ export default {
 
             const params = {};
 
-            params.page = this.store.currentPage;
-
             if (this.store.searchKeySelect) {
                 params.status = this.store.searchKeySelect;
             }
 
             if (this.store.searchKeyInput) {
                 params.name = this.store.searchKeyInput;
+            }
+
+            if (this.store.currentPage !== 1) {
+                params.page = this.store.currentPage;
             }
 
             axios.get(this.store.apiUrl, { params }).then(response => {

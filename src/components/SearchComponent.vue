@@ -2,6 +2,7 @@
 import { store } from "../store";
 export default {
     name: "SearchComponent",
+    emits: ["search"],
     data() {
         return {
             store
