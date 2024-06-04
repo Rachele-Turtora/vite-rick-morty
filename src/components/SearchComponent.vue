@@ -31,7 +31,7 @@ export default {
             </select>
         </div>
         <div class="d-inline-block">
-            <button class="search border-0">Search</button>
+            <button class="search border-0" @click="$emit('search')">Search</button>
             <button class="reset border-0" @click="reset()">Reset</button>
         </div>
     </div>
