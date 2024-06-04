@@ -5,32 +5,27 @@ export default {
 </script>
 
 <template>
-    <div class="sm-container">
-        <input type="text" placeholder="Search character">
-        <select name="" id="">
-            <option value="">Select status</option>
-        </select>
-        <button class="search">Search</button>
-        <button class="reset">Reset</button>
+    <div class="sm-container mb-2">
+        <div class="d-inline-block">
+            <input type="text" placeholder="Search character">
+            <select name="" id="">
+                <option value="">Select status</option>
+            </select>
+        </div>
+        <div class="d-inline-block">
+            <button class="search border-0">Search</button>
+            <button class="reset border-0">Reset</button>
+        </div>
     </div>
 </template>
 
 <style scoped>
-.sm-container {
-    margin-bottom: 10px;
-}
-
 input,
 select,
 button {
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
-}
-
-.search,
-.reset {
-    border: none;
 }
 
 .search {

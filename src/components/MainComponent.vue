@@ -30,7 +30,7 @@ export default {
 </script>
 
 <template>
-    <main>
+    <main class="pt-3">
         <div class="container">
             <div v-if="this.store.loading">
                 <p>Caricamento in corso...</p>
@@ -43,9 +43,3 @@ export default {
         </div>
     </main>
 </template>
-
-<style scoped>
-main {
-    padding-top: 30px;
-}
-</style>

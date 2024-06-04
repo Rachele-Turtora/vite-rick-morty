@@ -6,12 +6,6 @@ export default {
 
 <template>
     <header>
-        <h1>Rick and Morty App</h1>
+        <h1 class="fw-semibold p-5">Rick and Morty App</h1>
     </header>
 </template>
-
-<style scoped>
-h1 {
-    padding: 40px;
-}
-</style>

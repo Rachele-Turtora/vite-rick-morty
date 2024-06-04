@@ -13,13 +13,6 @@ export default {
 
 <template>
     <div>
-        <p>Found {{ store.results.length }} characters</p>
+        <p class="fw-bold p-2">Found {{ store.results.length }} characters</p>
     </div>
 </template>
-
-<style scoped>
-p {
-    padding: 20px;
-    font-weight: bold;
-}
-</style>
