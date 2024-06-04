@@ -1,20 +1,37 @@
 <script>
+import { store } from "../store";
 export default {
-    name: "SearchComponent"
+    name: "SearchComponent",
+    data() {
+        return {
+            store
+        }
+    },
+
+    methods: {
+        reset() {
+            store.searchKeyInput = "";
+            store.searchKeySelect = "";
+            this.$emit('search');
+        }
+    }
 }
 </script>
 
 <template>
     <div class="sm-container mb-2">
         <div class="d-inline-block">
-            <input type="text" placeholder="Search character">
-            <select name="" id="">
-                <option value="">Select status</option>
+            <input type="text" placeholder="Search character" @change="$emit('search')" v-model="store.searchKeyInput">
+            <select aria-label="Default select example" @change="$emit('search')" v-model="store.searchKeySelect">
+                <option selected value="">Select status</option>
+                <option value="alive">Alive</option>
+                <option value="dead">Dead</option>
+                <option value="unknown">Unknown</option>
             </select>
         </div>
         <div class="d-inline-block">
             <button class="search border-0">Search</button>
-            <button class="reset border-0">Reset</button>
+            <button class="reset border-0" @click="reset()">Reset</button>
         </div>
     </div>
 </template>

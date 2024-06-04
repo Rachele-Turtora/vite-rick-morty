@@ -23,7 +23,17 @@ export default {
         searchCards() {
             this.store.loading = true;
 
-            axios.get(this.store.apiUrl).then(response => {
+            const params = {};
+
+            if (this.store.searchKeySelect) {
+                params.status = this.store.searchKeySelect;
+            }
+
+            if (this.store.searchKeyInput) {
+                params.name = this.store.searchKeyInput;
+            }
+
+            axios.get(this.store.apiUrl, { params }).then(response => {
                 this.store.results = response.data.results;
                 this.store.loading = false;
             })
@@ -43,7 +53,7 @@ export default {
                 <p>Caricamento in corso...</p>
             </div>
             <div v-else>
-                <SearchComponent />
+                <SearchComponent @search="searchCards" />
                 <CardsComponent />
                 <FoundCharactersComponent />
             </div>
