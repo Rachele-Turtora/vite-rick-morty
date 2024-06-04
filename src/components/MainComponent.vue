@@ -18,13 +18,20 @@ export default {
             store
         }
     },
-    created() {
-        this.store.loading = true;
 
-        axios.get(this.store.apiUrl).then(response => {
-            this.store.results = response.data.results;
-            this.store.loading = false;
-        })
+    methods: {
+        searchCards() {
+            this.store.loading = true;
+
+            axios.get(this.store.apiUrl).then(response => {
+                this.store.results = response.data.results;
+                this.store.loading = false;
+            })
+        }
+    },
+
+    created() {
+        this.searchCards();
     }
 }
 </script>
